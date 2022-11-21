@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Minitest1</title>
+</head>
+<body>
+<script>
+
+    let n = +prompt('Nhap vao so phan tu ban muon : ');
+    let b = [];
+    let dem = 0;
+    document.write("Day so vua nhap la : ");
+    let m;
+    for (let i = 0; i < n; i++) {
+        m = +prompt("nhap");
+        document.write(m + " ");
+        b[dem] = m;
+        dem++;
+    }
+    document.write("<br>");
+    c = [];
+    tang = 0;
+
+    function kTraSNT(number) {
+        let count = 0;
+        for (let i = 2; i <= number; i++) {
+            if (number % i === 0) {
+                count += 1;
+            }
+        }
+
+        if (count === 1) {
+            document.write(number);
+        }
+    }
+
+    document.write("Cac so nguyen to co trong day la : ");
+    for (let i = 0; i < dem; i++) {
+        kTraSNT(b[i] + " ");
+    }
+
+    function timMax() {
+        let max = b[0];
+        for (let i = 0; i < b.length; i++) {
+            if (b[i] > max)
+                max = b[i];
+        }
+        document.write("So lon thu nhat la :" +max);
+    }
+
+    document.write('<br>');
+    timMax(b[tang]);
+    function timSoLonThuHai() {
+        let max = b[0];
+        let max2 = b[1];
+        for (let i = 0; i < b.length; i++) {
+            if (b[i] > max) {
+                max2 = max;
+                max = b[i];
+            } else if (b[i] > max2 && b[i] !== max) {
+                max2 = b[i];
+            }
+        }
+        document.write('Số lớn thứ hai là : ' + max2);
+    }
+
+    document.write("<br>");
+    timSoLonThuHai(b[tang]);
+</script>
+</body>
+</html>
